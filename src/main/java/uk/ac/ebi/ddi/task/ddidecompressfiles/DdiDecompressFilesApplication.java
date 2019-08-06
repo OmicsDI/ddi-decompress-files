@@ -24,6 +24,7 @@ public class DdiDecompressFilesApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		decompressFileService.decompress(decompressTaskProperties.getOriginalDirectory(),
-				decompressTaskProperties.getTargetDirectory(), decompressTaskProperties.isDeleteOriginal());
+				decompressTaskProperties.getTargetDirectory(),
+				decompressTaskProperties.isDeleteOriginal());
 	}
 }

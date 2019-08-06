@@ -20,7 +20,8 @@ public class DecompressFileService {
     public static final String GZIP_FILE_EXTENSION = "gz";
     public static final int BUFFER_SIZE = 1024;
 
-    public void decompress(Resource origDir, Resource trgtDir, boolean dltOriginal) throws FileNotFoundException, IOException {
+    public void decompress(Resource origDir, Resource trgtDir, boolean dltOriginal)
+            throws FileNotFoundException, IOException {
 
         File targetDir = trgtDir.getFile();
         File originDir = origDir.getFile();
