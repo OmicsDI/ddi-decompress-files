@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import uk.ac.ebi.ddi.task.ddidecompressfiles.configuration.DecompressTaskProperties;
 import uk.ac.ebi.ddi.task.ddidecompressfiles.service.DecompressFileService;
 
+@SuppressWarnings("checkstyle:filetabcharacter")
 @SpringBootApplication
 public class DdiDecompressFilesApplication implements CommandLineRunner {
 

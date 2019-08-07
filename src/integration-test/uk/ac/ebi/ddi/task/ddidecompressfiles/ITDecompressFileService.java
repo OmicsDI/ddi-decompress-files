@@ -11,6 +11,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import uk.ac.ebi.ddi.task.ddidecompressfiles.configuration.DecompressTaskProperties;
 import uk.ac.ebi.ddi.task.ddidecompressfiles.service.DecompressFileService;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = DdiDecompressFilesApplication.class,
         initializers = ConfigFileApplicationContextInitializer.class)
@@ -31,6 +35,7 @@ public class ITDecompressFileService {
     public void contextLoads() throws Exception {
         decompressFileService.decompress(decompressTaskProperties.getTargetDirectory(),
                 decompressTaskProperties.getOriginalDirectory(), decompressTaskProperties.isDeleteOriginal());
-        Assert.assertTrue(true);
+        Path path = Paths.get(decompressTaskProperties.getTargetDirectory().getURI());
+        Assert.assertTrue(Files.exists(path));
     }
 }
